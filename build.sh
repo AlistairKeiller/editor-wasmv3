@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-sudo ap install -y ninja
+sudo ap install -y ninja-build
 
 cmake -G Ninja -S llvm-project/llvm -B build \
     -DCMAKE_BUILD_TYPE=Release \
