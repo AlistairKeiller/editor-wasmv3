@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.24.2)
 
+find_package(LLVM CONFIG REQUIRED)
+
 add_executable(build build.cpp)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
