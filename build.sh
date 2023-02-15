@@ -10,4 +10,4 @@ cmake -G Ninja -S llvm-project/llvm -B build \
     -DLLVM_ENABLE_PROJECTS="clang" \
     # -DLLVM_PARALLEL_LINK_JOBS=2 \
     # -DLLVM_ENABLE_PROJECTS="clang;lld" \
-ninja -C build -- build
+# ninja -C build -- build
