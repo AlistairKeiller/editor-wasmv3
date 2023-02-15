@@ -1,8 +1,10 @@
 name: build
+run-name: build
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
-      - run: sh build.sh
+      - run: echo "🎉 The job was automatically triggered by a"
+      # - uses: actions/checkout
+      # - run: sh build.sh
