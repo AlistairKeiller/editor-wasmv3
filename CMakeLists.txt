@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.24.2)
 
 add_executable(build build.cpp)
 
-find_package(LLVM REQUIRED HINTS "${LLVM_CMAKE_DIR}")
+include(LLVM-Config)
+include(HandleLLVMOptions)
+include(AddLLVM)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
 message("LLVM_DEFINITIONS: ${LLVM_DEFINITIONS}")
