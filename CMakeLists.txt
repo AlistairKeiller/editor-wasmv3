@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24.2)
 
 add_executable(build build.cpp)
 
-include(TableGen)
+include(ClangFrontend)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
 message("LLVM_DEFINITIONS: ${LLVM_DEFINITIONS}")
