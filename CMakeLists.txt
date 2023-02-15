@@ -4,7 +4,6 @@ add_executable(build build.cpp)
 
 include(TableGen)
 include(AddLLVM)
-include(AddMLIR)
 include(HandleLLVMOptions)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
