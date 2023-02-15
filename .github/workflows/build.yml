@@ -8,4 +8,4 @@ jobs:
         with:
           submodules: true
       - run: sudo apt install -y ninja-build
-      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang" \
+      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_PROJECTS="clang"
