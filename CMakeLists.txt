@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.24.2)
 
 add_executable(build build.cpp)
 
-include(Clang)
+include(TableGen)
+include(AddLLVM)
+include(AddMLIR)
+include(HandleLLVMOptions)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
 message("LLVM_DEFINITIONS: ${LLVM_DEFINITIONS}")

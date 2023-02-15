@@ -9,4 +9,4 @@ cmake -G Ninja -S llvm-project/llvm -B build \
     -DLLVM_EXTERNAL_BUILD_SOURCE_DIR="$(pwd)" \
     -DLLVM_ENABLE_PROJECTS="clang" \
     # -DLLVM_PARALLEL_LINK_JOBS=2 \
-ninja -C build -- build
+# ninja -C build -- build
