@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.24.2)
 
-add_executable(build build.cpp)
+add_subdirectory(llvm-project/llvm llvm-build)
 
-include(LLVM-Config)
-include(HandleLLVMOptions)
-include(AddLLVM)
+get_target_property(LLVM_INCLUDE_DIRS LLVMSupport INCLUDE_DIRECTORIES)
+
+add_executable(build build.cpp)
 
 message("LLVM_INCLUDE_DIRS: ${LLVM_INCLUDE_DIRS}")
 message("LLVM_DEFINITIONS: ${LLVM_DEFINITIONS}")
