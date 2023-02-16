@@ -1,4 +1,4 @@
-#include "clang/Frontend/CompilerInstance.h"
+#include "Frontend/CompilerInstance.h"
 
 int main(){
     return 0;
