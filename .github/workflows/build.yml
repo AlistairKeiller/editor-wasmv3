@@ -8,4 +8,4 @@ jobs:
         with:
           submodules: true
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-      - run: ninja -C build -- build
+      - run: cmake --build build -- build
