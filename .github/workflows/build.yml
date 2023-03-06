@@ -8,5 +8,5 @@ jobs:
         with:
           submodules: true
       - run: sudo apt install ninja-build
-      - run: cmake -S llvm-project/llvm -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_EXTERNAL_PROJECTS="Build" -D-DLLVM_EXTERNAL_BUILD_SOURCE_DIR="$(pwd)" -DLLVM_ENABLE_PROJECTS="clang"
+      - run: cmake -S llvm-project/llvm -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_EXTERNAL_PROJECTS="build" -DLLVM_ENABLE_PROJECTS="clang;build" -D-DLLVM_EXTERNAL_BUILD_SOURCE_DIR="$(pwd)"
       - run: cmake --build build -- build
