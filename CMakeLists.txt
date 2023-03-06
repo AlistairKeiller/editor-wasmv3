@@ -12,7 +12,7 @@ add_clang_executable(build
   build.cpp
   )
 
-clang_target_link_libraries(tool-template
+clang_target_link_libraries(build
   PRIVATE
   clangAST
   clangASTMatchers
