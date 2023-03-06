@@ -20,7 +20,7 @@ add_executable(build build.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader)
+llvm_map_components_to_libnames(llvm_libs support core irreader clang)
 
 # Link against LLVM libraries
 target_link_libraries(build ${llvm_libs})
