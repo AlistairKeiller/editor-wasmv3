@@ -1,8 +1,3 @@
-cmake_minimum_required(VERSION 3.13.4)
-project(build)
-
-add_subdirectory(llvm-project/llvm)
-
 set(LLVM_LINK_COMPONENTS
   FrontendOpenMP
   Support
