@@ -1,3 +1,6 @@
+include(CMakeDependentOption)
+include(GNUInstallDirs)
+
 set(LLVM_LINK_COMPONENTS
   FrontendOpenMP
   Support
