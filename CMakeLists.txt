@@ -1,26 +1,23 @@
 cmake_minimum_required(VERSION 3.13.4)
 project(build)
 
-find_package(Clang REQUIRED CONFIG)
+include(llvm-project/llvm)
 
-message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
-message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+set(LLVM_LINK_COMPONENTS
+  FrontendOpenMP
+  Support
+  )
 
-# Set your project compile flags.
-# E.g. if using the C++ header files
-# you will need to enable C++11 support
-# for your compiler.
+add_clang_executable(build
+  build.cpp
+  )
 
-include_directories(SYSTEM "${LLVM_INCLUDE_DIRS};${CLANG_INCLUDE_DIRS}")
-separate_arguments(LLVM_DEFINITIONS_LIST NATIVE_COMMAND ${LLVM_DEFINITIONS})
-add_definitions(${LLVM_DEFINITIONS_LIST})
-
-# Now build our tools
-add_executable(build build.cpp)
-
-# Find the libraries that correspond to the LLVM components
-# that we wish to use
-llvm_map_components_to_libnames(llvm_libs support core irreader clang_frontend)
-
-# Link against LLVM libraries
-target_link_libraries(build ${llvm_libs})
+clang_target_link_libraries(tool-template
+  PRIVATE
+  clangAST
+  clangASTMatchers
+  clangBasic
+  clangFrontend
+  clangTooling
+  clangToolingRefactoring
+  )
