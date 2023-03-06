@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13.4)
-project(SimpleProject)
+project(build)
 
 find_package(LLVM REQUIRED CONFIG)
 
@@ -16,11 +16,11 @@ separate_arguments(LLVM_DEFINITIONS_LIST NATIVE_COMMAND ${LLVM_DEFINITIONS})
 add_definitions(${LLVM_DEFINITIONS_LIST})
 
 # Now build our tools
-add_executable(simple-tool tool.cpp)
+add_executable(build build.cpp)
 
 # Find the libraries that correspond to the LLVM components
 # that we wish to use
 llvm_map_components_to_libnames(llvm_libs support core irreader)
 
 # Link against LLVM libraries
-target_link_libraries(simple-tool ${llvm_libs})
+target_link_libraries(build ${llvm_libs})
